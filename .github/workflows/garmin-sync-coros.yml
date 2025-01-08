@@ -48,6 +48,7 @@ jobs:
       - name: Run Garmin Sync Coros
         if: env.RUN_TYPE == 'garmin_to_coros'
         run: |
+          rm /home/runner/work/garmin-sync-coros/garmin-sync-coros/db/garmin.db
           python scripts/garmin/garmin_sync_coros.py
       - name: Run Coros  Sync  Garmin
         if: env.RUN_TYPE == 'coros_to_garmin'
